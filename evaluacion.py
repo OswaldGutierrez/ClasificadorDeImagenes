@@ -304,7 +304,7 @@ def mostrarResumenFinal(resultadosTodos):
 # ============================================================
 
 if __name__ == "__main__":
-    rutaProyecto = r"D:\Proyectos\ClasificacionDeImagenes"
+    rutaProyecto = r"./"
 
     resultadosTodos = evaluarTodosLosModelos(rutaProyecto)
     mostrarResumenFinal(resultadosTodos)

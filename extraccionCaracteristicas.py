@@ -165,8 +165,8 @@ def mostrarResumen(caracteristicasHog, caracteristicasLbp, etiquetas, nombreData
 # ============================================================
 
 if __name__ == "__main__":
-    rutaDatosPreprocesados = r"D:\Proyectos\ClasificacionDeImagenes\datosPreprocesados"
-    rutaProyecto           = r"D:\Proyectos\ClasificacionDeImagenes"
+    rutaDatosPreprocesados = r"./datosPreprocesados"
+    rutaProyecto           = r"./"
 
     for nombreDataset in DATASETS:
         print(f"\n{'='*55}")

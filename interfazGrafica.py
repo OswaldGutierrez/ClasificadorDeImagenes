@@ -11,7 +11,7 @@ from skimage.feature import hog, local_binary_pattern
 # Configuración general
 # ============================================================
 
-RUTA_PROYECTO = r"D:\Proyectos\ClasificacionDeImagenes"
+RUTA_PROYECTO = r"./"
 
 TAMANO_IMAGEN        = (128, 128)
 TAMANO_KERNEL_GAUSS  = (5, 5)
@@ -280,7 +280,7 @@ class InterfazClasificador:
         # Cargar y redimensionar con recorte centrado
         imgPil = Image.open(rutaImagen).convert("RGB")
         
-        anchoObjetivo, altoObjetivo = 360, 300
+        anchoObjetivo, altoObjetivo = 260, 200
 
         # Escalar manteniendo proporción para que cubra el área completa
         ratioW = anchoObjetivo / imgPil.width

@@ -139,7 +139,7 @@ def mostrarResumenFinal(resultados):
 # ============================================================
 
 if __name__ == "__main__":
-    rutaProyecto = r"D:\Proyectos\ClasificacionDeImagenes"
+    rutaProyecto = r"./"
 
     resultados = entrenarTodosLosModelos(rutaProyecto)
     mostrarResumenFinal(resultados)

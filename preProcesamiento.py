@@ -105,7 +105,7 @@ def verificarPreprocesamiento(rutaBase):
 
 
 if __name__ == "__main__":
-    rutaDatos = "D:\Proyectos\ClasificacionDeImagenes\datasets"
+    rutaDatos = "./datasets"
 
     preprocesarDataset(rutaDatos)
     verificarPreprocesamiento(rutaDatos)
