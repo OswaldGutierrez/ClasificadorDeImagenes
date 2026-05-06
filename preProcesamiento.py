@@ -16,28 +16,18 @@ DATASETS = {
 PARTICIONES = ["train", "test"]
 
 def cargarImagen(rutaImagen):
-    """Carga una imagen desde la ruta indicada en formato BGR."""
     imagen = cv2.imread(str(rutaImagen))
     if imagen is None:
         print(f"  [ADVERTENCIA] No se pudo cargar: {rutaImagen}")
     return imagen
 
 def aplicarResize(imagen, tamano=TAMANO_IMAGEN):
-    """Redimensiona la imagen al tamaño indicado."""
     return cv2.resize(imagen, tamano, interpolation=cv2.INTER_AREA)
 
 def aplicarFiltroGaussiano(imagen, tamanoKernel=TAMANO_KERNEL_GAUSSIANO, sigma=SIGMA_GAUSSIANO):
-    """Aplica filtro gaussiano para suavizar ruido."""
     return cv2.GaussianBlur(imagen, tamanoKernel, sigma)
 
 def preprocesarImagen(rutaImagen):
-    """
-    Pipeline completo de preprocesamiento para una imagen:
-    1. Carga la imagen
-    2. Aplica resize a 128x128
-    3. Aplica filtro gaussiano
-    Retorna la imagen preprocesada o None si hubo error.
-    """
     imagen = cargarImagen(rutaImagen)
     if imagen is None:
         return None
@@ -48,10 +38,6 @@ def preprocesarImagen(rutaImagen):
     return imagenFiltrada
 
 def preprocesarDataset(rutaBase):
-    """
-    Recorre todos los datasets y particiones, preprocesa cada imagen
-    y la guarda en la carpeta 'datosPreprocesados' manteniendo la misma estructura.
-    """
     rutaBase = Path(rutaBase)
     rutaSalida = rutaBase.parent / "datosPreprocesados"
 
@@ -96,10 +82,6 @@ def preprocesarDataset(rutaBase):
     print(f"{'='*50}")
 
 def verificarPreprocesamiento(rutaBase):
-    """
-    Muestra un resumen de cuántas imágenes hay en cada carpeta
-    dentro de datosPreprocesados.
-    """
     rutaPreprocesados = Path(rutaBase).parent / "datosPreprocesados"
 
     if not rutaPreprocesados.exists():
