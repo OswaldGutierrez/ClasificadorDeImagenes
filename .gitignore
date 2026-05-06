@@ -1,0 +1,11 @@
+# Carpetas del proyecto que no se suben porque se generan cuando ejecutas los .py
+caracteristicas/
+datosPreprocesados/
+modelos/
+resultados/
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
